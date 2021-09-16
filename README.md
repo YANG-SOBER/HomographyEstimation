@@ -26,16 +26,16 @@ Script will run and output the number of inliers, max inliers found via RANSAC. 
 ***Original Image Set 1***
 
 ![Original Image 4](result_of_method_2/hall1_1.jpg)
-![Original Image 1](img1.png)
+![Original Image 1](result_of_method_2/hall1.jpg)
 
 ##### Finding keypoints:
 
-![Keypoints](Image_with_SIFT_Keypoints.jpg)
+![Keypoints](result_of_method_2/Image_with_SIFT_Keypoints.jpg)
 
 ##### Bruteforce Matching:
-![Matches](Image_with_BFMatcher_Keypoints.jpg)
+![Matches](result_of_method_2/Image_with_BFMatcher_Keypoints.jpg)
 
 ##### Final inliers using Method2:
 
-![Inliers](InlierMatches.png)
+![Inliers](result_of_method_2/InlierMatches.png)
 

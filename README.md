@@ -8,7 +8,7 @@ In ***Method1***, after the homography matrix H (3-by-3) is calculated from SVD 
 
 In ***Method2***, by applying ***Normalized DLT***, ill-conditioned situation is solved.
 
-Both of the two methods are commented in detailed.
+Both of the two methods are commented in detail.
 
 Run the script as follows:
 

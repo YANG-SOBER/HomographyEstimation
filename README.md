@@ -21,21 +21,19 @@ Script will run and output the number of inliers, max inliers found via RANSAC. 
 * InlierMatches.jpg. - draws all matches and colors them based on whether they are inliers in the final homography or not.
 * sift_keypoints.jpg - all the keypoints found by the SIFT 
 
-##### These are the original images: 
-
+***Original Image Set 1***
 ![Original Image 4](img4.png)
 ![Original Image 1](img1.png)
 
-***Original Image Set 1***
 
+##### Finding keypoints using Method1 and Method2:
 
-##### Finding our keypoints using SIFT:
-
-![Keypoints](sift_keypoints.png)
+***Method2***
+![Keypoints](Image_with_SIFT_keypoints.jpg)
 
 ##### Bruteforce Matching:
-
-![Matches](Matches.png)
+***Method2***
+![Matches](Image_with_BFMatcher_Keypoints.jpg)
 
 ##### Final inliers using our homography matrix:
 

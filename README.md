@@ -1,8 +1,3 @@
-# Robust Homography Estimation
-#### Jordan Hughes
-#### UC Santa Barbara
-#### hughesj919 at gmail.com
-
 Robust Homography Estimation ***Method1*** is from [Jordan Hughes](https://github.com/hughesj919/HomographyEstimation). I fix few bugs using python3 and add detailed comments.
 
 I want to thanks  Mr. Hughes here, his code helps me understand the scene behind the 2D Robust Homography.

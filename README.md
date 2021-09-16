@@ -25,17 +25,18 @@ Script will run and output the number of inliers, max inliers found via RANSAC. 
 ![Original Image 4](img4.png)
 ![Original Image 1](img1.png)
 
+***Original Image Set 2***
+![Original Image 4](img4.png)
+![Original Image 1](img1.png)
 
-##### Finding keypoints using Method1 and Method2:
+##### Finding keypoints:
 
-***Method2***
-![Keypoints](Image_with_SIFT_keypoints.jpg)
+![Keypoints](Image_with_SIFT_Keypoints.jpg)
 
 ##### Bruteforce Matching:
-***Method2***
 ![Matches](Image_with_BFMatcher_Keypoints.jpg)
 
-##### Final inliers using our homography matrix:
+##### Final inliers using Method2:
 
 ![Inliers](InlierMatches.png)
 

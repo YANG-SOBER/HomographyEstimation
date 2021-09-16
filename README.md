@@ -4,7 +4,7 @@ I want to thanks  Mr. Hughes here, his code helps me understand the scene behind
 
 Robust Homography Estimation ***Method2*** is slightly different from Method1. I replace the homography calculation part in ***Method1*** with [Normalized Direct Linear Transformation(DLT) Algorithm](https://www.youtube.com/watch?v=v3322cNhCTk&list=PLxg0CGqViygP47ERvqHw_v7FVnUovJeaz&index=9).
 
-In ***Method1***, after the homography matrix H (3-by-3) is calculated from SVD (Singular Value Decomposition), H is normalized with the 9-th elements. However, this method doesn't consider the situation where A might be ill-conditioned (*different elements in A has different orders of magnitude*), s.t. Ax = 0. Readers may follow the ***link of Normalized DLT*** above to get more detailed information.
+In ***Method1***, after the homography matrix H (3-by-3) is calculated from SVD (Singular Value Decomposition), H is normalized with the 9-th elements. However, this method doesn't consider the situation where A might be ill-conditioned (*different elements in A has different orders of magnitude*), s.t. Ah = 0. Readers may follow the ***link of Normalized DLT*** above to get more detailed information.
 
 In ***Method2***, by applying ***Normalized DLT***, ill-conditioned situation is solved.
 

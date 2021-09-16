@@ -8,10 +8,6 @@ In ***Method1***, after the homography matrix H (3-by-3) is calculated from SVD 
 
 In ***Method2***, by applying ***Normalized DLT***, ill-conditioned situation is solved.
 
-The performance of ***Method1*** and ***Method2*** are almost same in the case of ***small*** camera rotation and translation between corresponding images. For example, when two images are taken from the same view, where one image is a part of the other image (one image is taken from the other image）.
-
-However, I have to admit that ***Method1*** is more robust and faster than ***Method2*** in the case of ***large*** camera rotation and translation between two corresponding images. For example, when the two images are taken from different views. This because homography calculation part of ***Method1*** is simpler, although ***Method1*** doesn't normalize the point correspondences.
-
 Both of the two methods are commented in detail.
 
 Run the script as follows:

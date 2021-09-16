@@ -37,5 +37,5 @@ Script will run and output the number of inliers, max inliers found via RANSAC. 
 
 ##### Final inliers using Method2:
 
-![Inliers](result_of_method_2/InlierMatches.png)
+![Inliers](result_of_method_2/InlierMatches.jpg)
 

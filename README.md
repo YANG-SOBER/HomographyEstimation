@@ -1,6 +1,6 @@
 Robust Homography Estimation ***Method1*** is from [Jordan Hughes](https://github.com/hughesj919/HomographyEstimation). I fix few bugs using python3 and add detailed comments.
 
-I want to thanks  Mr. Hughes here, his code helps me understand the scene behind the 2D Robust Homography.
+I want to express my sincere thanks to Mr. Hughes here, his code helps me understand the scene behind the 2D Robust Homography.
 
 Robust Homography Estimation ***Method2*** is slightly different from Method1. I replace the homography calculation part in ***Method1*** with [Normalized Direct Linear Transformation(DLT) Algorithm](https://www.youtube.com/watch?v=v3322cNhCTk&list=PLxg0CGqViygP47ERvqHw_v7FVnUovJeaz&index=9).
 

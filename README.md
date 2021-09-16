@@ -1,23 +1,23 @@
-# HomographyEstimation
+# Robust Homography Estimation
 #### Jordan Hughes
 #### UC Santa Barbara
 #### hughesj919 at gmail.com
 
-This is a Python 2 based robust homography estimation that uses RANSAC -- a statistical approach for curbing outliers. 
-In computer vision, a homography is a matrix that maps coordinates from one plane to the same plane that has been rotated or translated or
-transformed in any other way in space. There are many applications of homographies, ranging from motion estimation to creation of
-panoramic images.
+Robust Homography Estimation ***Method1*** is from [Jordan Hughes](https://github.com/hughesj919/HomographyEstimation). I fix few bugs using python3 and add detailed comments.
 
-My script uses OpenCV to first calculate the SIFT keypoints. Those keypoints in each images are then matched using a Nearest Neighbor,
-or Brute Force matcher. Four of the correspondences are passed into a function that then calculates a homography. RANSAC will
-choose four random correspondences, calculate a homography, count the number of inliers, and keep the homography if it is better
-than any homography yet found. There is also a threshold parameter which for the script which takes a floating point number that sets a minimum percentage of 
-image points that must be accounted for by the current best homography estimation before RANSAC can stop. 
-The threshold is defaulted at 60% of correspondence points accounted for.  If the threshold isn’t met, the function will loop 1000 times.
+I want to thanks  Mr. Hughes here, his code helps me understand the scene behind the 2D Robust Homography.
+
+Robust Homography Estimation ***Method2*** is slightly different from Method1. I replace the homography calculation part in ***Method1*** with [Normalized Direct Linear Transformation(DLT) Algorithm](https://www.youtube.com/watch?v=v3322cNhCTk&list=PLxg0CGqViygP47ERvqHw_v7FVnUovJeaz&index=9).
+
+In ***Method1***, after the homography matrix H (3-by-3) is calculated from SVD (Singular Value Decomposition), H is normalized with the 9-th elements. However, this method doesn't consider the situation where A might be ill-conditioned (*different elements in A has different orders of magnitude*), s.t. Ax = 0. Readers may follow the ***link of Normalized DLT*** above to get more detailed information.
+
+In ***Method2***, by applying ***Normalized DLT***, ill-conditioned situation is solved.
+
+Both of the two methods are commented in detailed.
 
 Usage example is as follows:
 
-```python homography.py --threshold 0.60 img4.pgm img1.pmg```
+```python3 homography.py --threshold 0.60 your_image_path.jpg your_image_path.jpg```
 
 Script will run and output the number of inliers, max inliers found via RANSAC. When done looping, the final estimated homography will be output as well. File output will be:
 

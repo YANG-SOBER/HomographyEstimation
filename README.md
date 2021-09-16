@@ -13,6 +13,7 @@ Both of the two methods are commented in detailed.
 Run the script as follows:
 
 ```python3 robust_homography_method1.py --threshold=0.60 your_image_path.jpg your_image_path.jpg```
+```python3 robust_homography_method2.py --threshold=0.60 your_image_path.jpg your_image_path.jpg```
 
 Script will run and output the number of inliers, max inliers found via RANSAC. When done looping, the final estimated homography will be output as well. File output will be:
 

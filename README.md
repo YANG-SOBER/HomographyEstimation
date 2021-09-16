@@ -25,7 +25,7 @@ Script will run and output the number of inliers, max inliers found via RANSAC. 
 
 ***Original Image Set 1***
 
-![Original Image 4](hall1_1.jpg.png)
+![Original Image 4](result_of_method_2/hall1_1.jpg)
 ![Original Image 1](img1.png)
 
 ##### Finding keypoints:

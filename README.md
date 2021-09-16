@@ -21,7 +21,7 @@ Script will run and output the number of inliers, max inliers found via RANSAC. 
 * homography.txt - final estimation of homography parameters
 * Matches.png - shows all points and matches between the two images.
 * InlierMatches.jpg. - draws all matches and colors them based on whether they are inliers in the final homography or not.
-* sift_keypoints.jpg - all the keypoints found by the SIFT 
+* sift_keypoints.jpg - all the keypoints found by the SIFT.
 
 ***Original Image Set***
 

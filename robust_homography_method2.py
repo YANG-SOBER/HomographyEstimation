@@ -91,36 +91,6 @@ def matchFeatures(kp1, kp2, des1, des2, img1, img2):
 
     return matches
 
-# Compute a homography from 4-correspondences
-
-def calculateHomography(correspondences):
-    A_list = []
-    for corr in correspondences: # corr: np.array([x1, y1, x2, y2])
-
-        # write each point correspondence as homogeneous coordinates
-        p1 = np.array([corr.item(0), corr.item(1), 1]) # [x1, y1, 1]
-        p2 = np.array([corr.item(2), corr.item(3), 1]) # [x2, y2, 1]
-
-        # Construct Ai, s.t. Aih = 0, where Ai is (2, 9), h is (9, 1)
-        # A_1 = [0, 0, 0, -x_1, -y_1, -1, y_2*x_1, y_2*y_1, y_2]
-        A_1 = [0, 0, 0, -p1.item(0), -p1.item(1), -1, p2.item(1) * p1.item(0), p2.item(1) * p1.item(1), p2.item(1)]
-        # A_2 = [x1, y1, 1, 0, 0, 0, -x_2*x_1, -x_2*y_1, -x_2]
-        A_2 = [p1.item(0), p1.item(1), 1, 0, 0, 0, -p2.item(0) * p1.item(0), -p2.item(0) * p1.item(1), -p2.item(0)]
-
-        A_list.append(A_1)
-        A_list.append(A_2)
-    # Construct A, s.t. Ah = 0, where A is (2* len(correspondences), 9)
-    A = np.array(A_list)
-
-    # compute and transform h, to get homography matrix H
-    U, S, VT = np.linalg.svd(A)
-    V = VT.T
-    h = V[:, -1] # h is in the shape of (9, 1)
-    h /= h.item(8)
-    H = h.reshape((3, 3)) # or H = np.reshape(h, (3, 3))
-
-    return H
-
 # Calculate the geometric distance between estimated points and original points
 def geometricDistance(correspondence, H):
     p1 = np.array([correspondence.item(0), correspondence.item(1), 1]) # p1: [x1, y1, 1] homogeneous coordinates
@@ -155,16 +125,11 @@ def ransac(corr, thresh): # thresh: inliers ratio threshold
             pt1_list.append(list(corrFour[:, :2][i]))
             pt2_list.append(list(corrFour[:, 2:][i]))
 
-        #with open("point_correspondences.txt", 'w') as f:
-            #f.write(f'4 point correspondences: \n {corrFour} \n')
-            #f.write(f'pt1: \n {pt1_list} \n')
-            #f.write(f'pt2: \n {pt2_list} \n')
-
         # *Compute* Compute the homography from the above 4 randomly sampled points
-        # H = calculateHomography(corrFour)
         normalized_dlt = Dlt(pt1_list, pt2_list)
         H = normalized_dlt.computeH()
         H /= H.item(-1)
+        
         inliers = []
 
         # *Calculate* Calculate the distance d for each putative correspondence
